@@ -25,6 +25,8 @@ public class HelloAndroidActivityTest extends ActivityInstrumentationTestCase2<H
 
     @UiThreadTest
     public void testActivity_shouldUseCustomComputerUsingEasyMock() throws Exception {
+        System.setProperty("dexmaker.dexcache", getInstrumentation().getTargetContext().getCacheDir().getPath());
+
         final int EXPECTED_RESULT = 1;
         // given
         HelloAndroidActivity activityUnderTest = getActivity();
